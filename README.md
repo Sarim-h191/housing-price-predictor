@@ -10,7 +10,7 @@ A machine learning project that predicts housing prices using Python, Scikit-Lea
 
 ## How to Run  
 1. Clone the repository:  
-   git clone https://github.com/<your-username>/housing-price-predictor.git  
+   git clone https://github.com/Sarim-h191/housing-price-predictor.git  
    cd housing-price-predictor  
 
 2. Install dependencies:  
