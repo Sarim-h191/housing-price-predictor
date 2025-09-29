@@ -9,7 +9,10 @@ A machine learning project that predicts housing prices using Python, Scikit-Lea
 - Visualization of results with Matplotlib  
 
 ## How to Run  
+
 1. Clone the repository:  
+[https://github.com/Sarim-h191/housing-price-predictor.git](https://github.com/Sarim-h191/housing-price-predictor.git)  
+
    git clone https://github.com/Sarim-h191/housing-price-predictor.git  
    cd housing-price-predictor  
 
@@ -18,6 +21,7 @@ A machine learning project that predicts housing prices using Python, Scikit-Lea
 
 3. Open and run the notebook:  
    jupyter notebook housing_price_predictor.ipynb  
+ 
 
 ## Results  
 - XGBoost achieved higher accuracy than baseline linear models  
