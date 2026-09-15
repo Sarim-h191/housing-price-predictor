@@ -73,6 +73,9 @@ def main():
     parser.add_argument('--data-dir', type=Path, default=Path('data'))
     parser.add_argument('--output-dir', type=Path, default=Path('outputs'))
     args = parser.parse_args()
+    for name in ('train.csv', 'test.csv'):
+        if not (args.data_dir / name).is_file():
+            parser.error(f'Missing {args.data_dir / name}. Download the Kaggle House Prices files; see README.md.')
     metrics, submission, *_ = run(pd.read_csv(args.data_dir / 'train.csv'), pd.read_csv(args.data_dir / 'test.csv'))
     args.output_dir.mkdir(parents=True, exist_ok=True)
     submission.to_csv(args.output_dir / 'submission.csv', index=False)

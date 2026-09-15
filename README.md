@@ -2,7 +2,13 @@
 
 A Python regression project comparing Linear Regression, Random Forest, and XGBoost using five numeric house features: GrLivArea, OverallQual, TotalBsmtSF, GarageCars, and YearBuilt.
 
-## Setup (Python 3.11 or 3.12)
+## See the results
+
+![Validation RMSE comparison](results/model_comparison.svg)
+
+View the [saved metrics](results/metrics.json) and [first 10 predicted prices](results/sample_predictions.csv) directly on GitHub. These are outputs from the uploaded Kaggle dataset, not a live price-estimation service.
+
+## Setup (tested with Python 3.12)
 
 ```bash
 git clone https://github.com/Sarim-h191/housing-price-predictor.git
@@ -12,7 +18,9 @@ source .venv/bin/activate
 python -m pip install -r requirements.txt
 ```
 
-Obtain `train.csv` and `test.csv` from the Kaggle House Prices: Advanced Regression Techniques competition and place them in a local `data/` directory. The original dataset is not bundled. Do not substitute an unrelated dataset when reporting performance.
+Obtain `train.csv` and `test.csv` from the [Kaggle House Prices competition data page](https://www.kaggle.com/competitions/house-prices-advanced-regression-techniques/data) (sign in and accept competition rules if prompted) and place them in a local `data/` directory. The original dataset is not bundled. Create the folder with `mkdir -p data`, then copy both CSV files into it.
+
+On Windows PowerShell, activate the environment with `.venv\Scripts\Activate.ps1`. On macOS, if XGBoost reports a missing `libomp` library, install it with `brew install libomp` and retry.
 
 ```bash
 python housing.py --data-dir data --output-dir outputs
@@ -50,4 +58,4 @@ python -m unittest -v
 
 Synthetic-data tests verify that validation rows do not influence fitted medians, the final pipeline relearns medians on all labeled rows, prediction preprocessing is consistent, output IDs are preserved, repeated runs agree, and invalid data is rejected. Synthetic scores are not evidence of real housing prediction performance.
 
-Demo: run the command above, open `metrics.json`, explain the three RMSE values and selected model, and show the first rows of `submission.csv`. In the notebook, show the comparison chart. Explain: “I held out rows to compare models, then retrained the selected pipeline on all labeled data to generate predictions.”
+Demo: run `python housing.py --data-dir data --output-dir outputs`, open `metrics.json`, explain the three RMSE values and selected model, and show the first rows of `submission.csv`. In the notebook, show the comparison chart. Explain: “I held out rows to compare models, then retrained the selected pipeline on all labeled data to generate predictions.”

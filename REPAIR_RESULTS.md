@@ -23,3 +23,19 @@ test.csv 8fdd3d829d4d986b58f845c9553b225e67dd8383624d90fb6ca1d4bed5798c1e
 See README.md for explanations and the demo walkthrough.
 
 All notebook code cells also executed in sequence using synthetic CSV inputs and wrote both output files. A normal Jupyter-kernel run could not be verified because this execution environment blocks the kernel's network sockets; direct code-cell execution passed.
+
+
+## Release verification
+
+A fresh GitHub checkout and a new Python 3.12 virtual environment successfully installed the requirements, passed all three tests, and ran the command-line workflow on the provided real CSVs. Direct dependencies are now pinned to the tested versions:
+
+- numpy 2.5.3
+- pandas 2.3.3
+- scikit-learn 1.8.0
+- xgboost 3.4.1
+- matplotlib 3.11.2
+- jupyterlab 4.6.3
+
+Saved metrics, a chart, and 10 sample predictions are included in results/ for inspection without running code. Full predictions are generated locally under outputs/.
+
+All notebook code cells also executed sequentially on the real CSVs in the fresh environment and matched the command-line metrics. This checks cell logic; Jupyter kernel/UI execution remains unverified in this environment.

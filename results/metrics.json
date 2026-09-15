@@ -1,0 +1,14 @@
+{
+  "validation_rmse": {
+    "Linear Regression": 39763.29526578072,
+    "Random Forest": 28887.958918999644,
+    "XGBoost": 28436.0436066623
+  },
+  "selected_model": "XGBoost",
+  "fit_rows": 1168,
+  "validation_rows": 292,
+  "final_training_rows": 1460,
+  "prediction_rows": 1459,
+  "random_state": 42,
+  "evaluation": "One 80/20 validation split; selection scores are not independent test performance."
+}
