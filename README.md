@@ -30,7 +30,15 @@ This writes `outputs/metrics.json` and `outputs/submission.csv`. Alternatively, 
 
 ## Results and limits
 
-No updated real-data RMSE is claimed until the repaired workflow is run on the original CSV files. The previous notebook's saved scores used the old workflow and should not be used as repaired-model results. XGBoost is a candidate, not a guaranteed winner.
+Verified on the user-supplied Kaggle CSV files (1,460 labeled rows and 1,459 prediction rows):
+
+| Model | Validation RMSE |
+| --- | ---: |
+| Linear Regression | 39,763.30 |
+| Random Forest | 28,887.96 |
+| XGBoost | 28,436.04 |
+
+The shared split used 1,168 fitting rows and 292 validation rows. XGBoost was selected, refitted on all 1,460 labeled rows, and generated 1,459 predictions. These replace the old saved notebook scores. See REPAIR_RESULTS.md for environment and file fingerprints.
 
 The 80/20 holdout is used for model selection. Its RMSE is not an independent final test score. Kaggle's unlabeled test file cannot be used to compute local RMSE. Dollar-scale RMSE here is also different from a log-price competition metric. No hyperparameter search or feature-importance plot is implemented.
 
