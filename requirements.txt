@@ -1,4 +1,6 @@
-pandas
-scikit-learn
-xgboost
-matplotlib
+numpy>=2,<3
+pandas>=2.2,<3
+scikit-learn>=1.8,<1.9
+xgboost>=3,<4
+matplotlib>=3.10,<4
+jupyterlab>=4,<5
