@@ -1,4 +1,6 @@
-pandas
-scikit-learn
-xgboost
-matplotlib
+numpy==2.5.3
+pandas==2.3.3
+scikit-learn==1.8.0
+xgboost==3.4.1
+matplotlib==3.11.2
+jupyterlab==4.6.3
